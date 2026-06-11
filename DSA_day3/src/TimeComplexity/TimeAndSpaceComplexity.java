@@ -44,12 +44,17 @@ public class TimeAndSpaceComplexity {
 		            System.out.println((i+1) + ". " +
 		                              students[i] + " = " + marks[i]);
 		        }
+		        
+		        //To find top student
+		        highestmarks(students,marks);
 		 
 		        // LINEAR SEARCH - Student name dhundho
 		        System.out.println("\n=== LINEAR SEARCH ===");
 		        searchStudent(students, "Pooja");
 		        searchStudent(students, "Karan");
 		        searchStudent(students, "Amit");
+		        
+		        
 		    }
 		 
 		    // LINEAR SEARCH METHOD
@@ -77,6 +82,30 @@ public class TimeAndSpaceComplexity {
 		                             " | Steps = " + steps);
 		        }
 		    }
+		    
+		    //function to find top student
+		     static void highestmarks (String[] students,int[] marks) {
+	        	int m = 0;
+	        	for (int i=1;i<marks.length;i++) {
+	        		if (marks[m] < marks[i]) {
+	        			m=i;
+	        		}
+	        	}	
+				System.out.println("Top Student: "+students[m]+ marks[m]); 
+				
+				int count = 0;
+				
+				for (int j = 0;j<marks.length;j++) {
+					if(marks[j] > 60) {
+						count++;
+					}
+				}
+				
+				System.out.println("Number of students scoring above 60: "+ count);
+	        	
+	        }
+		     
+		     
 		}
 		 
 		 
